@@ -1,0 +1,48 @@
+---
+title: "Credit Scoring - Test Task - Tamga"
+author: "Андрей Будиш"
+date: "10 November 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## 1. Загрузим и проанализируем данные
+```{r load_data}
+library(readxl)
+data_sheet1 <- read_xls("ТЗ.xls", sheet = '1_data jan-may')
+
+# Взлянём на данные
+summary(data_sheet1)
+
+# dlfjsl
+library(gmodels)
+CrossTable()
+```
+```{r з}
+## 2. Удалим колонки, которые не важны для анализа
+```{r delete_columns}
+data_sheet1$`Договор номер` <- NULL
+```
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
